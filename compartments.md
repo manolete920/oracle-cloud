@@ -20,7 +20,7 @@ manolete919/M_@n0l3te_919
 oci --version
 ```
 
-example
+example M@nolete919
 
 ```
 manolete919@SIS_CEN1_071:~$ oci --version
