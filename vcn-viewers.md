@@ -1,5 +1,17 @@
 # Provision Oracle Cloud Developer
 
+## Install Oracle Linux Cloud Developer
+
+image source: Platform image
+
+![MicrosoftTeams-image](./images/MicrosoftTeams-image.png)
+
+## change Shape
+
+![image-20221220171014554](./images/image-20221220171014554.png)
+
+Upload the public key that works with private.key 
+
 ## login
 
 ```bash
@@ -64,7 +76,7 @@ By default the VNC server will communicate on port 59xx where xx represents the 
 
 
 
-## kill
+## kill the vnc server
 
 ```bash
 [opc@mgr-vm-dev01 ~]$ vncserver -kill :1
@@ -125,25 +137,25 @@ ssh -i private.key -L 5901:localhost:5901 opc@129.153.47.242
 
 ### Configure the server
 
-![image-20221220164808840](D:\oracle-cloud\images\image-20221220164808840.png)
+![image-20221220164808840](./images/image-20221220164808840.png)
 
 ### set the auto-login username
 
-![image-20221220164913714](D:\oracle-cloud\images\image-20221220164913714.png)
+![image-20221220164913714](./images/image-20221220164913714.png)
 
 ### Add ppx
 
 
 
-![image-20221220165251124](D:\oracle-cloud\images\image-20221220165251124.png)
+![image-20221220165251124](./images/image-20221220165251124.png)
 
 ### Add tunner localhost:5901
 
-![image-20221220165357820](D:\oracle-cloud\images\image-20221220165357820.png)
+![image-20221220165357820](./images/image-20221220165357820.png)
 
 ### Save session
 
-![image-20221220165543496](D:\oracle-cloud\images\image-20221220165543496.png)
+![image-20221220165543496](./images/image-20221220165543496.png)
 
 
 
@@ -155,18 +167,18 @@ localhost:5901
 
 ### create
 
-![image-20221220165639491](D:\oracle-cloud\images\image-20221220165639491.png)
+![image-20221220165639491](./images/image-20221220165639491.png)
 
 Password
 
 M@nolete919
 
-![image-20221220165718694](D:\oracle-cloud\images\image-20221220165718694.png)
+![image-20221220165718694](./images/image-20221220165718694.png)
 
 ..
 
-![image-20221220165753772](D:\oracle-cloud\images\image-20221220165753772.png)
+![image-20221220165753772](./images/image-20221220165753772.png)
 
 ### view
 
-![image-20221220165827448](D:\oracle-cloud\images\image-20221220165827448.png)
+![image-20221220165827448](./images/image-20221220165827448.png)
