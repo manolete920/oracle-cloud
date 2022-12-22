@@ -27,7 +27,102 @@ manolete919@SIS_CEN1_071:~$ oci --version
 3.22.0
 ```
 
-## Set up
+## User profile
+
+```bash
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaac4cyaor6ijegybc5ydcduevzwvyuu3g63i2dmrkz3nbssh2pxsaq
+fingerprint=b0:76:fc:9e:47:23:9a:18:46:07:51:7e:aa:28:97:c0
+tenancy=ocid1.tenancy.oc1..aaaaaaaazk5fzn3nj4hrz5qgki6tdvhtzmkgggyspun5cyogx24bngwehgma
+region=us-ashburn-1
+key_file=/home/opc/mgarciarprivate.pem
+```
+
+## set up with key file
+
+```bash
+[opc@mgr-vm-dev01 ~]$ oci setup config
+    This command provides a walkthrough of creating a valid CLI config file.
+
+    The following links explain where to find the information required by this
+    script:
+
+    User API Signing Key, OCID and Tenancy OCID:
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#Other
+
+    Region:
+
+        https://docs.cloud.oracle.com/Content/General/Concepts/regions.htm
+
+    General config documentation:
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/sdkconfig.htm
+
+
+Enter a location for your config [/home/opc/.oci/config]:
+Enter a user OCID: ocid1.user.oc1..aaaaaaaac4cyaor6ijegybc5ydcduevzwvyuu3g63i2dmrkz3nbssh2pxsaq
+Enter a tenancy OCID: ocid1.tenancy.oc1..aaaaaaaazk5fzn3nj4hrz5qgki6tdvhtzmkgggyspun5cyogx24bngwehgma
+Enter a region by index or name(e.g.
+1: af-johannesburg-1, 2: ap-chiyoda-1, 3: ap-chuncheon-1, 4: ap-dcc-canberra-1, 5: ap-hyderabad-1,
+6: ap-ibaraki-1, 7: ap-melbourne-1, 8: ap-mumbai-1, 9: ap-osaka-1, 10: ap-seoul-1,
+11: ap-singapore-1, 12: ap-sydney-1, 13: ap-tokyo-1, 14: ca-montreal-1, 15: ca-toronto-1,
+16: eu-amsterdam-1, 17: eu-frankfurt-1, 18: eu-marseille-1, 19: eu-milan-1, 20: eu-stockholm-1,
+21: eu-zurich-1, 22: il-jerusalem-1, 23: me-abudhabi-1, 24: me-dcc-muscat-1, 25: me-dubai-1,
+26: me-jeddah-1, 27: sa-santiago-1, 28: sa-saopaulo-1, 29: sa-vinhedo-1, 30: uk-cardiff-1,
+31: uk-gov-cardiff-1, 32: uk-gov-london-1, 33: uk-london-1, 34: us-ashburn-1, 35: us-gov-ashburn-1,
+36: us-gov-chicago-1, 37: us-gov-phoenix-1, 38: us-langley-1, 39: us-luke-1, 40: us-phoenix-1,
+41: us-sanjose-1): us-ashburn-1
+Do you want to generate a new API Signing RSA key pair? (If you decline you will be asked to supply the path to an existing key.) [Y/n]: n
+Enter the location of your API Signing private key file: /home/opc/mgarciarprivate.pem
+Fingerprint: b0:76:fc:9e:47:23:9a:18:46:07:51:7e:aa:28:97:c0
+Config written to /home/opc/.oci/config
+
+
+    If you haven't already uploaded your API Signing public key through the
+    console, follow the instructions on the page linked below in the section
+    'How to upload the public key':
+
+        https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#How2
+
+
+```
+
+output
+
+```bash
+[opc@mgr-vm-dev01 ~]$ cd .oci/
+[opc@mgr-vm-dev01 .oci]$ ls
+config
+[opc@mgr-vm-dev01 .oci]$ cat config
+[DEFAULT]
+user=ocid1.user.oc1..aaaaaaaac4cyaor6ijegybc5ydcduevzwvyuu3g63i2dmrkz3nbssh2pxsaq
+fingerprint=b0:76:fc:9e:47:23:9a:18:46:07:51:7e:aa:28:97:c0
+key_file=/home/opc/mgarciarprivate.pem
+tenancy=ocid1.tenancy.oc1..aaaaaaaazk5fzn3nj4hrz5qgki6tdvhtzmkgggyspun5cyogx24bngwehgma
+region=us-ashburn-1
+```
+
+
+
+## oci os ns get
+
+```bash
+[opc@mgr-vm-dev01 .oci]$ oci os ns get
+WARNING: Permissions on /home/opc/mgarciarprivate.pem are too open.
+To fix this please try executing the following command:
+oci setup repair-file-permissions --file /home/opc/mgarciarprivate.pem
+Alternatively to hide this warning, you may set the environment variable, OCI_CLI_SUPPRESS_FILE_PERMISSIONS_WARNING:
+export OCI_CLI_SUPPRESS_FILE_PERMISSIONS_WARNING=True
+
+{
+  "data": "id6dibaakt36"
+}
+```
+
+
+
+## Set up generating key file
 
 ```bash
 manolete919@SIS_CEN1_071:~$ oci setup config
